@@ -1,23 +1,23 @@
 {
   "Sélectionner": "Select",
-  "de vos genres musicaux préférés": "de vos genres musicaux préférés",
-  "Cliquez pour choisir vos genres": "Cliquez pour choisir vos genres",
-  "Sélectionner 3 genres musicaux": "Sélectionner 3 genres musicaux",
-  "Vous avez sélectionné": "Vous avez sélectionné",
+  "de vos genres musicaux préférés": "your favourite music genres",
+  "Cliquez pour choisir vos genres": "Click to select your genres",
+  "Sélectionner 3 genres musicaux": "Select 3 music genres",
+  "Vous avez sélectionné": "You have selected",
   "genre(s)": "genre(s)",
-  "Valider": "Valider",
+  "Valider": "Validate",
 
-  "Combien voulez vous de recommandations ?": "Combien voulez vous de recommandations ?",
+  "Combien voulez vous de recommandations ?": "How many recommendations do you want ?",
 
 
 
-  "Choisir": "Choisir",
-  "titres de musiques": "titres de musiques",
+  "Choisir": "Choose",
+  "titres de musiques": "music titles",
 
-  "Votre avis sur la recommandations": "Votre avis sur la recommandations",
-  "Envoyer la notation": "Envoyer la notation",
+  "Votre avis sur la recommandations": "Your ratings for these recommendations",
+  "Envoyer la notation": "Send ratings",
   "Français": "Français",
-  "Anglais": "Anglais",
+  "Anglais": "English",
   "Site réalisé par Mathieu HARMANT et Augustin DIRAND": "Website made by Mathieu HARMANT and Augustin DIRAND",
   "Vos recommandations sont :": "Your recommandations are :"
 }
