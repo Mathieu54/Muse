@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 export const generalStore = defineStore('generalStore', {
     state: () => {
         return {
+            musicListIARecommend: [],
             showResult: false,
             showMusicChoose: false,
             musicSelectedUser: [],
@@ -11,6 +12,9 @@ export const generalStore = defineStore('generalStore', {
         }
     },
     getters: {
+        getMusicListIARecommend: (state) => {
+           return state.musicListIARecommend;
+        },
         getRecommendationsNumberStore: (state) => {
             return state.recommendationsNumberStore;
         },

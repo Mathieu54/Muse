@@ -12,7 +12,7 @@
         </v-chip>
       </v-col>
       <v-col cols="1" class="d-flex justify-end align-center">
-          <v-btn class="mr-4" size="small" @click="clearMusicSelected()" :loading="loadingGetRecommendations" icon="mdi-close"></v-btn>
+          <v-btn class="mr-4" size="small" @click="clearMusicSelected()" :disabled="loadingGetRecommendations" icon="mdi-close"></v-btn>
       </v-col>
     </v-row>
     <v-row no-gutters="false" class="text-center bg-orange-lighten-5" style="max-height: 400px; overflow-y: scroll">
@@ -23,7 +23,7 @@
           <p class="d-flex justify-center align-center mr-1" style="font-size: 10px">{{ music.duration }} seconds</p>
           <v-btn size="small" class="mr-1" :icon="isMusicPlaying(index) ? 'mdi-stop' : 'mdi-play'"
                  @click="togglePlay(index,'audio/' + music.id + '.low.mp3')"></v-btn>
-          <v-btn size="small" class="mr-5" :icon="isMusicSelected(index) ? 'mdi-close-thick' : 'mdi-plus-thick'"
+          <v-btn size="small" class="mr-5" :disabled="loadingGetRecommendations" :icon="isMusicSelected(index) ? 'mdi-close-thick' : 'mdi-plus-thick'"
                  @click="selectMusic(index, music)"></v-btn>
         </div>
       </v-col>
@@ -40,6 +40,7 @@
 import { defineComponent } from 'vue'
 import {generalStore} from "@/store/generalStore";
 import {snackbarNotifStore} from "@/store/snackbarNotif";
+import tracksJson from "@/assets/data/tracks.json";
 import axios from "axios";
 
 export default defineComponent({
@@ -113,25 +114,35 @@ export default defineComponent({
     },
     async getRecommendations() {
       generalStore().musicSelectedUser = this.listMusicChoiceUser;
-      generalStore().showResult = true;
       this.loadingGetRecommendations = true;
       const headers = {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', // Spécifiez le type de contenu de votre requête (JSON dans ce cas)
+        'Content-Type': 'application/json', // Spécifiez le type de contenu de votre requête (JSON dans ce cas)
         'Access-Control-Allow-Origin': '*', // Si votre API nécessite une authentification avec un jeton (token)
       };
+      const ids = [];
+      this.listMusicChoiceUser.forEach(item => {
+        ids.push(item.id);
+      });
       const params = {
-        "n_song": 2,
-        "song_ids": ["1421132"]
+        "n_song": generalStore().getRecommendationsNumberStore,
+        "song_ids": ids
       };
-      await axios.get("http://muse.augustindirand.com:50101/api/music", {
-        data: params, headers: headers
-      })
+      await axios.post("https://api.augustindirand.com/music", params, { headers })
           .then(response => {
-            // Traiter la réponse ici
-            console.log(response.data);
+            const matchedTitles = [];
+            response.data['song_ids_2'].forEach(id => {
+              if (tracksJson[id]) {
+                matchedTitles.push(tracksJson[id]);
+              }
+            });
+            generalStore().musicListIARecommend = matchedTitles;
+            console.log(matchedTitles);
+            generalStore().showResult = true;
+            this.loadingGetRecommendations = false;
           })
           .catch(error => {
             // Gérer les erreurs ici
+            this.loadingGetRecommendations = false;
             console.error(error);
           });
     }
