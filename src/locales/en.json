@@ -1,23 +1,46 @@
 {
-  "Sélectionner": "Select",
-  "de vos genres musicaux préférés": "your favourite music genres",
-  "Cliquez pour choisir vos genres": "Click to select your genres",
-  "Sélectionner 3 genres musicaux": "Select 3 music genres",
-  "Vous avez sélectionné": "You have selected",
-  "genre(s)": "genre(s)",
-  "Valider": "Validate",
-
-  "Combien voulez vous de recommandations ?": "How many recommendations do you want ?",
-
-
-
-  "Choisir": "Choose",
-  "titres de musiques": "music titles",
-
-  "Votre avis sur la recommandations": "Your ratings for these recommendations",
-  "Envoyer la notation": "Send ratings",
-  "Français": "Français",
+  "Français": "French",
   "Anglais": "English",
-  "Site réalisé par Mathieu HARMANT et Augustin DIRAND": "Website made by Mathieu HARMANT and Augustin DIRAND",
-  "Vos recommandations sont :": "Your recommandations are :"
+
+  "Nouvelle recommandation": "New recommendation",
+  "Aucune recommandation enregistrée n'a été trouvée.": "No saved recommendations were found.",
+  "Supprimer les sauvegardes": "Delete the backups",
+
+  "Vous n'avez créé aucune recommandation !": "You haven't created any recommendations !",
+  "Commencer en cliquant sur le bouton !": "Start by clicking the button !",
+
+  "Sélectionner 3 genres de musique :": "",
+  "Rechercher un genre dans la liste": "",
+  "Aucun genre musical trouvé.": "",
+  "Vos genres sélectionnés :": "",
+  "Vos musiques sélectionnées :": "",
+  "Vous n'avez sélectionné aucun genre.": "",
+  "Sélectionner 3 morceaux de musique :": "",
+  "Rechercher un morceau de musique dans la liste": "",
+  "Aucune musique trouvée.": "",
+  "Réinitialiser": "",
+  "Vous n'avez sélectionné aucune musique.": "",
+  "Sélectionner le nombre de recommandations que vous souhaitez recevoir de Muse :": "",
+  "Vous avez choisi ": "",
+  "recommendation(s) par Muse.": "",
+  "Modifier les recommandations": "",
+  "Modifier les musiques": "",
+  "Précédent": "",
+  "Annuler": "Cancel",
+  "Suivant": "Next",
+  "Créer la recommandation": "",
+  "Étape": "",
+  "Résumé": "",
+  "Erreur cette étape n'existe pas !": "",
+  "Genre": "",
+  "Duration": "",
+  "Année": "",
+  " musiques :": "",
+
+  "Noter la recommandation de Muse 1 :": "",
+  "Noter la recommandation de Muse 2 :": "",
+  "Muse 1 vous recommande ces morceaux de musique :": "",
+  "Muse 2 vous recommande ces morceaux de musique :": "",
+
+  "Envoyer vos avis": ""
 }
