@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-navigation-drawer app v-model="getNavigationDrawer" class="bg-blue-grey-darken-3" @update:modelValue="updateNavigationDrawer()">
+    <!--<v-navigation-drawer app v-model="getNavigationDrawer" class="bg-blue-grey-darken-3" @update:modelValue="updateNavigationDrawer()">
       <div class="d-flex h-100 flex-column justify-center align-center text-center" v-if="getSaveDataRecommendations.length <= 0">
           <p>{{ $t("Aucune recommandation enregistrée n'a été trouvée.") }}</p>
           <div class="position-fixed flex-column justify-end align-center w-100" style="bottom: 0; z-index: 99999">
@@ -33,7 +33,7 @@
           <v-btn color="white" rounded="0" variant="tonal" stacked class="w-100 bg-red-darken-3" prepend-icon="mdi-trash-can" size="small">{{ $t("Supprimer les sauvegardes") }}</v-btn>
         </div>
       </div>
-    </v-navigation-drawer>
+    </v-navigation-drawer>-->
   </section>
 </template>
 

@@ -41,15 +41,19 @@ export const recommendationStore = defineStore('recommendationStore', {
             }
         },
         async createRatings(numberRecommendation, numberMusicSelected, ratingsIA1, ratingsIA2) {
+            let params = {
+                "n_song": numberMusicSelected,
+                "n_recs": numberRecommendation
+            };
+            if (ratingsIA1 !== null) {
+                params["rating_1"] = ratingsIA1;
+            }
+            if (ratingsIA2 !== null) {
+                params["rating_2"] = ratingsIA2;
+            }
             try {
                 const headers = {
                     'Content-Type': 'application/json',
-                };
-                const params = {
-                    "n_song": numberMusicSelected,
-                    "n_recs": numberRecommendation,
-                    "rating_1": ratingsIA1,
-                    "rating_2": ratingsIA2
                 };
                 const response = await axios.post("https://api.augustindirand.com/ratings", params, { headers });
                 return response;

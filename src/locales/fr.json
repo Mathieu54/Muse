@@ -7,5 +7,41 @@
   "Supprimer les sauvegardes": "Supprimer les sauvegardes",
 
   "Vous n'avez créé aucune recommandation !": "Vous n'avez créé aucune recommandation !",
-  "Commencer en cliquant sur le bouton !": "Commencer en cliquant sur le bouton !"
+  "Commencer en cliquant sur le bouton !": "Commencer en cliquant sur le bouton !",
+
+  "Sélectionner 3 genres de musique :": "Sélectionner 3 genres de musique :",
+  "Rechercher un genre dans la liste": "Rechercher un genre dans la liste",
+  "Aucun genre musical trouvé.": "Aucun genre musical trouvé.",
+  "Vos genres sélectionnés :": "Vos genres sélectionnés :",
+  "Vos musiques sélectionnées :": "Vos musiques sélectionnées :",
+  "Vous n'avez sélectionné aucun genre.": "Vous n'avez sélectionné aucun genre.",
+  "Sélectionner 3 morceaux de musique :": "Sélectionner 3 morceaux de musique :",
+  "Rechercher un morceau de musique dans la liste": "Rechercher un morceau de musique dans la liste",
+  "Aucune musique trouvée.": "Aucune musique trouvée.",
+  "Réinitialiser": "Réinitialiser",
+  "Vous n'avez sélectionné aucune musique.": "Vous n'avez sélectionné aucune musique.",
+  "Sélectionner le nombre de recommandations que vous souhaitez recevoir de Muse :": "Sélectionner le nombre de recommandations que vous souhaitez recevoir de Muse :",
+  "Vous avez choisi ": "Vous avez choisi ",
+  "recommendation(s) par Muse.": "recommendation(s) par Muse.",
+  "Modifier les recommandations": "Modifier les recommandations.",
+  "Modifier les musiques": "Modifier les musiques",
+  "Précédent": "Précédent",
+  "Annuler": "Annuler",
+  "Suivant": "Suivant",
+  "Créer la recommandation": "Créer la recommandation",
+  "Étape": "Étape",
+  "Résumé": "Résumé",
+  "Erreur cette étape n'existe pas !": "Erreur cette étape n'existe pas !",
+  "Genre": "Genre",
+  "Duration": "Duration",
+  "Année": "Année",
+  " musiques :": " musiques :",
+
+
+  "Noter la recommandation de Muse 1 :": "Noter la recommandation de Muse 1 :",
+  "Noter la recommandation de Muse 2 :": "Noter la recommandation de Muse 2 :",
+  "Muse 1 vous recommande ces morceaux de musique :": "Muse 1 vous recommande ces morceaux de musique :",
+  "Muse 2 vous recommande ces morceaux de musique :": "Muse 2 vous recommande ces morceaux de musique :",
+
+  "Envoyer vos avis": "Envoyer vos avis"
 }

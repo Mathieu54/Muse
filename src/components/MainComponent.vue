@@ -14,15 +14,17 @@
         </v-row>
         <v-row class="text-center justify-center" v-else>
           <v-col cols="12">
-            <h2>Muse 1 vous recommandes ces 3 musiques :</h2>
+            <h2>{{ $t("Muse 1 vous recommande ces morceaux de musique :") }}</h2>
           </v-col>
           <v-col class="bg-blue-grey-darken-3" v-for="(musicSelectedIA1, index) in getActualShowRecommendationGenerated.musicIASelect1" :key="index" cols="12" :md="getColumnWidth(getActualShowRecommendationGenerated.numberRecommendation)">
-            <p>{{musicSelectedIA1.title}}</p>
-            <p>{{musicSelectedIA1.duration}}</p>
-            <p>{{musicSelectedIA1.year}}</p>
+            <p class="text-h5">{{musicSelectedIA1.title}}</p>
+            <p>{{ $t("Genre") }} : <span v-for="(genre, index) in musicSelectedIA1.genre" :key="index">&nbsp;{{ genre }}</span></p>
+            <p>{{ $t("Duration") }} : {{musicSelectedIA1.duration}}</p>
+            <p>{{ $t("Année") }} : {{musicSelectedIA1.year}}</p>
+            <v-btn :icon="isMusicPlaying(index) ? 'mdi-stop' : 'mdi-play'" @click="togglePlay(index, musicSelectedIA1.id)" color="white" variant="tonal" class="mr-3" size="small"></v-btn>
           </v-col>
           <v-col cols="12" v-if="getActualShowRecommendationGenerated.isRating === false">
-            <p>Noter la recommendations de Muse 1 :</p>
+            <p>{{ $t("Noter la recommandation de Muse 1 :") }}</p>
             <v-rating density="compact" v-model="ratingIA1" length="10" color="amber-lighten-1"
                       :item-labels="['1', '', '', '', '', '', '', '', '', '10']" item-label-position="bottom">
               <template v-slot:item-label="props">
@@ -31,16 +33,17 @@
             </v-rating>
           </v-col>
           <v-col cols="12">
-            <h2>Muse 2 vous recommandes ces 3 musiques :</h2>
+            <h2>{{ $t("Muse 2 vous recommande ces morceaux de musique :") }}</h2>
           </v-col>
           <v-col class="bg-blue-grey-darken-3" v-for="(musicSelectedIA2, index) in getActualShowRecommendationGenerated.musicIASelect2" :key="index" cols="12" :md="getColumnWidth(getActualShowRecommendationGenerated.numberRecommendation)">
-            <p>{{musicSelectedIA2.title}}</p>
-            <p>{{musicSelectedIA2.duration}}</p>
-            <p>{{musicSelectedIA2.year}}</p>
-            <v-btn :icon="isMusicPlaying(index) ? 'mdi-stop' : 'mdi-play'" @click="togglePlay(index, music.id)" color="white" variant="tonal" class="mr-3" size="small"></v-btn>
+            <p class="text-h5">{{musicSelectedIA2.title}}</p>
+            <p>{{ $t("Genre") }} : <span v-for="(genre, index) in musicSelectedIA2.genre" :key="index">&nbsp;{{ genre }}</span></p>
+            <p>{{ $t("Duration") }} : {{musicSelectedIA2.duration}}</p>
+            <p>{{ $t("Année") }} : {{musicSelectedIA2.year}}</p>
+            <v-btn :icon="isMusicPlaying(index) ? 'mdi-stop' : 'mdi-play'" @click="togglePlay(index, musicSelectedIA2.id)" color="white" variant="tonal" class="mr-3" size="small"></v-btn>
           </v-col>
           <v-col cols="12" v-if="getActualShowRecommendationGenerated.isRating === false">
-            <p>Noter la recommendations de Muse 2 :</p>
+            <p>{{ $t("Noter la recommandation de Muse 2 :") }}</p>
             <v-rating density="compact" v-model="ratingIA2" length="10" color="amber-lighten-1"
                       :item-labels="['1', '', '', '', '', '', '', '', '', '10']" item-label-position="bottom">
               <template v-slot:item-label="props">
@@ -49,10 +52,11 @@
             </v-rating>
           </v-col>
           <v-col cols="12" md="12" v-if="getActualShowRecommendationGenerated.isRating === false">
-            <v-btn variant="tonal" size="large" @click="sendRatings()">Envoyer vos avis</v-btn>
+            <v-btn variant="tonal" size="large" @click="sendRatings()" :disabled="ratingIA1 === 0 && ratingIA2 === 0">
+              {{ $t("Envoyer vos avis") }}</v-btn>
           </v-col>
           <v-col cols="12" md="12">
-            <v-btn v-if="getActualShowRecommendationGenerated.isSave === false" class="mr-2" variant="tonal" size="large" @click="saveRecommandation()">Enregistrer Recommandation</v-btn>
+            <!--<v-btn v-if="getActualShowRecommendationGenerated.isSave === false" class="mr-2" variant="tonal" size="large" @click="saveRecommandation()">Enregistrer Recommandation</v-btn>-->
             <v-btn variant="tonal" size="large" @click="createNewRecommendation()">{{ $t("Nouvelle recommandation") }}</v-btn>
           </v-col>
         </v-row>
@@ -124,24 +128,25 @@ export default defineComponent({
       recommendationStore().isDialogCreateOpen = true;
     },
     async sendRatings() {
-      await recommendationStore().createRatings(recommendationStore().getActualShowRecommendationGenerated.number, "").then(response => {
-        console.log(response);
-      });
-      let getDate = recommendationStore().getActualShowRecommendationGenerated;
-      const year = getDate.createDate.getFullYear();
-      const month = String(getDate.createDate.getMonth() + 1).padStart(2, '0');
-      const day = String(getDate.createDate.getDate()).padStart(2, '0');
-      const hours = String(getDate.createDate.getHours()).padStart(2, '0');
-      const minutes = String(getDate.createDate.getMinutes()).padStart(2, '0');
-      const seconds = String(getDate.createDate.getSeconds()).padStart(2, '0');
-      const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-      let idSaveCheck = CryptoJS.MD5(formattedDate).toString();
-      if(recommendationStore().saveDataRecommendations.some(item => item.idSave === idSaveCheck)) {
-        console.log("trouvé !");
-        recommendationStore().saveDataRecommendations.find(item => item.idSave === idSaveCheck).isRating = true;
-      } else {
-        console.log("pas trouvé !");
-        recommendationStore().actualShowRecommendationGenerated.isRating = true;
+      if(this.ratingIA1 !== 0 || this.ratingIA2 !== 0) {
+        console.log(recommendationStore().getActualShowRecommendationGenerated);
+        await recommendationStore().createRatings(recommendationStore().getActualShowRecommendationGenerated.numberRecommendation, recommendationStore().getActualShowRecommendationGenerated.musicsSelect.length, this.ratingIA1, this.ratingIA2).then(response => {
+          console.log(response);
+        });
+        let getDate = recommendationStore().getActualShowRecommendationGenerated;
+        const year = getDate.createDate.getFullYear();
+        const month = String(getDate.createDate.getMonth() + 1).padStart(2, '0');
+        const day = String(getDate.createDate.getDate()).padStart(2, '0');
+        const hours = String(getDate.createDate.getHours()).padStart(2, '0');
+        const minutes = String(getDate.createDate.getMinutes()).padStart(2, '0');
+        const seconds = String(getDate.createDate.getSeconds()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        let idSaveCheck = CryptoJS.MD5(formattedDate).toString();
+        if(recommendationStore().saveDataRecommendations.some(item => item.idSave === idSaveCheck)) {
+          recommendationStore().saveDataRecommendations.find(item => item.idSave === idSaveCheck).isRating = true;
+        } else {
+          recommendationStore().actualShowRecommendationGenerated.isRating = true;
+        }
       }
     },
     saveRecommandation() {

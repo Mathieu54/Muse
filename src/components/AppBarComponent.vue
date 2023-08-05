@@ -1,7 +1,7 @@
 <template>
   <section>
     <v-app-bar color="blue-grey-darken-4" class="w-100" prominent elevation="0">
-      <v-app-bar-nav-icon variant="text" @click="openNavigationDrawer()"></v-app-bar-nav-icon>
+      <!--<v-app-bar-nav-icon variant="text" @click="openNavigationDrawer()"></v-app-bar-nav-icon>-->
       <v-toolbar-title>Muse</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-menu transition="slide-x-transition">
