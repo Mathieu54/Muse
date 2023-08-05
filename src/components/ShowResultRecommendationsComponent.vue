@@ -10,6 +10,20 @@
           <p class="text-left">Year: </p>
           <p class="text-left">Durations: secondes</p>
           <v-btn
+
+              class="ma-2"
+              color="orange-lighten-4"
+              icon="mdi-play"
+          ></v-btn>
+        </v-card>
+      </v-col>
+      <v-col v-for="col in getRecommendations" :key="col" cols="12" :md="getColumnWidth(getRecommendations)">
+        <v-card class="ma-2 pa-5 bg-orange-lighten-5">
+          <h2 style="text-overflow: ellipsis; width: 100%; white-space: nowrap; overflow: hidden;">Titre de la musique</h2>
+          <p class="text-left">Genre : </p>
+          <p class="text-left">Year: </p>
+          <p class="text-left">Durations: secondes</p>
+          <v-btn
               class="ma-2"
               color="orange-lighten-4"
               icon="mdi-play"

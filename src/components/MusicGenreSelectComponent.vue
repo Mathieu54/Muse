@@ -13,7 +13,7 @@
           <div v-if="getGenreSelected.length <= 0">
             {{ $t("Cliquez pour choisir vos genres") }}
           </div>
-          <div v-else class="d-flex flex-row">
+          <div v-else class="d-flex flex-column flex-md-row">
             <p>Vos genres sélectionnés :</p>
             <p v-for="(genreList, index) in getGenreSelected" :key="index" class="mx-2">
               <span v-if="index === 0">

@@ -30,7 +30,7 @@
     </v-row>
     <v-row no-gutters="false" class="text-left bg-orange-lighten-4" style="min-height: 63px">
       <v-col cols="12" class="d-flex justify-center">
-        <v-btn class="mt-3" @click="getRecommendations()" :loading="loadingGetRecommendations">Commencer</v-btn>
+        <v-btn class="mt-3" @click="getRecommendations()" :loading="loadingGetRecommendations" :disabled="listMusicChoiceUser.length <= 0">Commencer</v-btn>
       </v-col>
     </v-row>
   </section>
@@ -113,25 +113,29 @@ export default defineComponent({
     },
     async getRecommendations() {
       generalStore().musicSelectedUser = this.listMusicChoiceUser;
-      generalStore().showResult = true;
       this.loadingGetRecommendations = true;
       const headers = {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', // Spécifiez le type de contenu de votre requête (JSON dans ce cas)
-        'Access-Control-Allow-Origin': '*', // Si votre API nécessite une authentification avec un jeton (token)
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       };
+      const ids = [];
+      generalStore().getMusicSelectedUser.forEach(music => {
+        ids.push(music.id);
+      });
       const params = {
-        "n_song": 2,
-        "song_ids": ["1421132"]
+        "n_song": generalStore().getRecommendationsNumberStore,
+        "song_ids": ids
       };
-      await axios.get("http://muse.augustindirand.com:50101/api/music", {
-        data: params, headers: headers
-      })
+      await axios.post("https://api.augustindirand.com/music", params, { headers }
+      )
           .then(response => {
-            // Traiter la réponse ici
+            generalStore().showResult = true;
             console.log(response.data);
+            this.loadingGetRecommendations = false;
           })
           .catch(error => {
-            // Gérer les erreurs ici
+            this.loadingGetRecommendations = false;
+            snackbarNotifStore().showNotification("Une erreur à eu lieu lors de l'envoie des données !", true, "red", 5000);
             console.error(error);
           });
     }
