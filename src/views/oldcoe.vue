@@ -69,3 +69,71 @@
   </v-container>
 </v-main>
 </v-app>
+
+
+
+
+
+
+
+
+
+
+
+
+<v-window-item :value="2" class="h-100">
+<v-container class="h-100">
+  <v-row class="d-flex justify-center align-center h-100">
+    <v-col cols="12">
+      <p>Séléctionner le nombre de recommendations que vous souhaitez recevoir de la part de l'ia :</p>
+      <v-slider
+          color="gray"
+          :step="1"
+          min="1"
+          max="5"
+          show-ticks="always"
+          tick-size="0"
+      ></v-slider>
+    </v-col>
+  </v-row>
+</v-container>
+</v-window-item>
+
+<v-window-item :value="3" class="h-100">
+<v-container class="h-100">
+  <v-row class="h-100 d-flex justify-center align-center">
+    <v-col cols="12">
+      <v-text-field v-model="searcs" label="Rechercher une musique"></v-text-field>
+      <div style="max-height: 350px; overflow-y: scroll">
+        <div v-for="(titleGenre, index) in filteredGenres" :key="index" class="d-flex justify-center align-center">
+          <v-checkbox
+              class="text-right"
+              v-model="selected"
+              :label="titleGenre"
+              :value="titleGenre"
+              hide-details
+          ></v-checkbox>
+          <v-btn class="mr-3" icon="mdi-play" size="x-small"></v-btn>
+        </div>
+      </div>
+      <div>
+        <h2>Vos musiques sélectionné</h2>
+        <v-row class="d-flex justify-center align-center text-center">
+          <v-col cols="12" md="4">
+            <p>Pascal</p>
+          </v-col>
+          <v-col cols="12" md="4">
+            <p>Pokemon</p>
+          </v-col>
+          <v-col cols="12" md="4">
+            <p>Jean Pierre</p>
+          </v-col>
+          <v-col cols="12" md="4">
+            <p>Pokemon</p>
+          </v-col>
+        </v-row>
+      </div>
+    </v-col>
+  </v-row>
+</v-container>
+</v-window-item>
