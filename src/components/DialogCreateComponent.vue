@@ -37,7 +37,7 @@
                           {{ genreSelected }}
                         </v-chip>
                         <br>
-                        <v-btn @click="clearAllSelectedGenres()" color="white" variant="tonal" class="bg-red-darken-3 mt-3">{{ $t("Réinitialiser") }}</v-btn>
+                        <v-btn @click="clearAllSelectedGenres()" color="gray" variant="tonal" class="mt-3" icon="mdi-close"></v-btn>
                       </v-col>
                       <v-col cols="12" md="4" class="h-100" v-else>
                         <p class="pa-5">{{ $t("Vous n'avez sélectionné aucun genre.") }}</p>
@@ -75,12 +75,12 @@
                   <div class="text-center">
                     <h2>{{ $t("Vos musiques sélectionnées :") }}</h2>
                     <v-row class="d-flex justify-center align-center text-center">
-                      <v-col cols="12" md="4" v-if="selectedGenres.length >= 1">
+                      <v-col cols="12" md="4" v-if="selectedMusics.length >= 1">
                         <v-chip class="text-capitalize pa-5 mr-2 mt-2" v-for="(musicSelected, index) in selectedMusics" :key="index">
                           {{ musicSelected.title }}
                         </v-chip>
                         <br>
-                        <v-btn @click="clearAllSelectedMusics()" color="white" variant="tonal" class="bg-red-darken-3 mt-3">{{ $t("Réinitialiser") }}</v-btn>
+                        <v-btn @click="clearAllSelectedMusics()" color="gray" variant="tonal" class="mt-3" icon="mdi-close"></v-btn>
                       </v-col>
                       <v-col cols="12" md="4" class="h-100" v-else>
                         <p class="pa-5">{{ $t("Vous n'avez sélectionné aucune musique.") }}</p>
@@ -137,13 +137,13 @@
           <v-btn v-if="stepCreationRecommendation >= 2" variant="tonal" :disabled="selectedGenres.length < 1" @click="previousStep()">
             {{ $t("Précédent") }}
           </v-btn>
-          <v-btn v-if="stepCreationRecommendation === 1" variant="tonal" :disabled="selectedGenres.length < 1" @click="nextStep()">
+          <v-btn v-if="stepCreationRecommendation === 1" color="green-lighten-2" variant="tonal" :disabled="selectedGenres.length < 1" @click="nextStep()">
             {{ $t("Suivant") }}
           </v-btn>
-          <v-btn v-if="stepCreationRecommendation === 3" variant="tonal" @click="nextStep()">
+          <v-btn v-if="stepCreationRecommendation === 3" color="green-lighten-2" variant="tonal" @click="nextStep()">
             {{ $t("Suivant") }}
           </v-btn>
-          <v-btn v-if="stepCreationRecommendation === 2" variant="tonal" :disabled="selectedMusics.length < 1" @click="nextStep()">
+          <v-btn v-if="stepCreationRecommendation === 2" color="green-lighten-2" variant="tonal" :disabled="selectedMusics.length < 1" @click="nextStep()">
             {{ $t("Suivant") }}
           </v-btn>
           <v-btn @click="createRecommendation()" :loading="createRecommendationLoading" color="green-lighten-2" v-if="stepCreationRecommendation === 4" variant="tonal">
