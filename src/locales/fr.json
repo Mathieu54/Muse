@@ -1,6 +1,6 @@
 {
   "Français": "Français",
-  "Anglais": "Anglais",
+  "Anglais": "English",
 
   "Nouvelle recommandation": "Nouvelle recommandation",
   "Aucune recommandation enregistrée n'a été trouvée.": "Aucune recommandation enregistrée n'a été trouvée.",
@@ -31,7 +31,7 @@
   "Créer la recommandation": "Créer la recommandation",
   "Étape": "Étape",
   "Résumé": "Résumé",
-  "Erreur cette étape n'existe pas !": "Erreur cette étape n'existe pas !",
+  "Erreur cette étape n'existe pas !": "Erreur, cette étape n'existe pas !",
   "Genre": "Genre",
   "Duration": "Duration",
   "Année": "Année",
