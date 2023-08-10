@@ -4,6 +4,7 @@
       <!--<v-app-bar-nav-icon variant="text" @click="openNavigationDrawer()"></v-app-bar-nav-icon>-->
       <v-toolbar-title>Muse</v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-btn class="mr-2" variant="tonal" size="small" icon="mdi-information" @click="showInfos()"></v-btn>
       <v-menu transition="slide-x-transition">
         <template v-slot:activator="{ props }">
           <v-btn variant="tonal" size="small" v-bind="props" icon="mdi-google-translate"></v-btn>
@@ -31,6 +32,7 @@
 import {defineComponent} from 'vue'
 import {langStore} from "@/store/langStore";
 import {recommendationStore} from "@/store/recommendationStore";
+import {dialogBoxStore} from "@/store/dialogBoxStore";
 
 export default defineComponent({
   name: 'AppBarComponent',
@@ -38,6 +40,9 @@ export default defineComponent({
     this.$i18n.locale = langStore().getLangSelected;
   },
   methods: {
+    showInfos() {
+      dialogBoxStore().showDialogBox = true;
+    },
     openNavigationDrawer() {
       recommendationStore().isNavigationDrawerOpen = !recommendationStore().getIsNavigationDrawerOpen;
     },

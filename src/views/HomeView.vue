@@ -5,6 +5,7 @@
     <MainComponent />
   </v-app>
   <DialogCreateComponent />
+  <DialogBoxComponent />
 </template>
 <script>
 import {defineComponent} from 'vue';
@@ -12,10 +13,11 @@ import NavigationDrawerComponent from "@/components/NavigationDrawerComponent";
 import AppBarComponent from "@/components/AppBarComponent";
 import MainComponent from "@/components/MainComponent";
 import DialogCreateComponent from "@/components/DialogCreateComponent";
+import DialogBoxComponent from "@/components/DialogBoxComponent.vue";
 
 export default defineComponent({
   name: 'HomeView',
-  components: {DialogCreateComponent, MainComponent, AppBarComponent, NavigationDrawerComponent},
+  components: {DialogBoxComponent, DialogCreateComponent, MainComponent, AppBarComponent, NavigationDrawerComponent},
   computed: {
     currentTitle () {
       switch (this.step) {
