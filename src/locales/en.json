@@ -2,11 +2,11 @@
   "Français": "Français",
   "Anglais": "English",
 
-  "Nouvelle recommandation": "New recommendation",
+  "Nouvelle recommandation": "New music recommendation",
   "Aucune recommandation enregistrée n'a été trouvée.": "No saved recommendation was found.",
   "Supprimer les sauvegardes": "Delete backups",
 
-  "Vous n'avez créé aucune recommandation !": "You haven't created any recommendations !",
+  "Vous n'avez créé aucune recommandation !": "You haven't created any musics recommendations !",
   "Commencer en cliquant sur le bouton !": "Start by clicking the button !",
 
   "Sélectionner 3 genres de musique :": "Select up to 3 music genres",
@@ -20,15 +20,15 @@
   "Aucune musique trouvée.": "No song found",
   "Réinitialiser": "Reset",
   "Vous n'avez sélectionné aucune musique.": "You have not selected any song",
-  "Sélectionner le nombre de recommandations que vous souhaitez recevoir de Muse :": "Select the desired number of recommendations you would like to receive from Muse :",
+  "Sélectionner le nombre de recommandations que vous souhaitez recevoir de Muse :": "Select the desired number of musics recommendations you would like to receive from Muse :",
   "Vous avez choisi ": "You have selected: ",
-  "recommendation(s) par Muse.": "recommendation(s) from Muse.",
-  "Modifier les recommandations": "Edit recommendations",
+  "recommendation(s) par Muse.": "music(s) recommendation(s) from Muse.",
+  "Modifier les recommandations": "Edit musics recommendations",
   "Modifier les musiques": "Edit songs",
   "Précédent": "Previous",
   "Annuler": "Cancel",
   "Suivant": "Next",
-  "Créer la recommandation": "Create the recommendation",
+  "Créer la recommandation": "Start recommendation",
   "Étape": "Step",
   "Résumé": "Summary",
   "Erreur cette étape n'existe pas !": "Error, this step does not exist !",
@@ -37,10 +37,21 @@
   "Année": "Year",
   " musiques :": " songs :",
 
-  "Noter la recommandation de Muse 1 :": "Rate Muse 1's recommendation",
-  "Noter la recommandation de Muse 2 :": "Rate Muse 2's recommendation",
+  "Noter la recommandation de Muse 1 :": "Rate Muse 1's music recommendation",
+  "Noter la recommandation de Muse 2 :": "Rate Muse 2's music recommendation",
   "Muse 1 vous recommande ces morceaux de musique :": "Muse 1 recommends you the following songs: ",
   "Muse 2 vous recommande ces morceaux de musique :": "Muse 2 recommends you the following songs: ",
 
-  "Envoyer vos avis": "Send your reviews"
+  "Envoyer vos avis": "Send your reviews",
+
+  "Bienvenue sur Muse, un projet de recommendations musicales.": "Welcome on Muse, a project for musical recommendations.",
+  "Ce site web ne récolte aucune donnée utilisateur personnelle et n'utilise aucun cookie. Les avis sont envoyés annonymement sans inclure d'information permettant de tracer l'utilisateur.": "This website does not collect any personal user information and does not use any cookie.\nRatings are sent annonymously without including any information permitting to trace users.",
+  "Il est peu probable que les musiques sélectionnables vous soient connues. Utilisez vos genres préférés pour sélectionner des musiques qui vous plaisent !": "It is unlikely that you will know the selectable songs.\nUse your favorite genres to select songs that you enjoy !",
+  "Toutes les musiques sont disponibles sur le site: ": "All songs used are available at: ",
+  "Pensez à bien utiliser toute l'échelle pour noter les recommendations.": "Please use the full scale to rate the recommendations.",
+  "La recommendation ne vous plais pas du tout.": "You really don't like the recommendation.",
+  "La recommendation pourrait être meilleure ou plus pertinente.": "The recommendation could be better or more relevant.",
+  "La recommendation vous plais énormément.": "You really enjoy the recommendation.",
+  "J'ai compris": "I understand",
+  "Informations sur Muse": "Information about Muse"
 }

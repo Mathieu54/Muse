@@ -2,11 +2,11 @@
   "Français": "Français",
   "Anglais": "English",
 
-  "Nouvelle recommandation": "Nouvelle recommandation",
+  "Nouvelle recommandation": "Nouvelle recommandation musicale",
   "Aucune recommandation enregistrée n'a été trouvée.": "Aucune recommandation enregistrée n'a été trouvée.",
   "Supprimer les sauvegardes": "Supprimer les sauvegardes",
 
-  "Vous n'avez créé aucune recommandation !": "Vous n'avez créé aucune recommandation !",
+  "Vous n'avez créé aucune recommandation !": "Vous n'avez créé aucune recommandation musicale !",
   "Commencer en cliquant sur le bouton !": "Commencer en cliquant sur le bouton !",
 
   "Sélectionner 3 genres de musique :": "Sélectionner 3 genres de musique :",
@@ -23,7 +23,7 @@
   "Sélectionner le nombre de recommandations que vous souhaitez recevoir de Muse :": "Sélectionner le nombre de recommandations que vous souhaitez recevoir de Muse :",
   "Vous avez choisi ": "Vous avez choisi ",
   "recommendation(s) par Muse.": "recommendation(s) par Muse.",
-  "Modifier les recommandations": "Modifier les recommandations.",
+  "Modifier les recommandations": "Modifier les recommandations musicales.",
   "Modifier les musiques": "Modifier les musiques",
   "Précédent": "Précédent",
   "Annuler": "Annuler",
@@ -38,10 +38,21 @@
   " musiques :": " musiques :",
 
 
-  "Noter la recommandation de Muse 1 :": "Noter la recommandation de Muse 1 :",
-  "Noter la recommandation de Muse 2 :": "Noter la recommandation de Muse 2 :",
+  "Noter la recommandation de Muse 1 :": "Noter la recommandation musicale de Muse 1 :",
+  "Noter la recommandation de Muse 2 :": "Noter la recommandation musicale de Muse 2 :",
   "Muse 1 vous recommande ces morceaux de musique :": "Muse 1 vous recommande ces morceaux de musique :",
   "Muse 2 vous recommande ces morceaux de musique :": "Muse 2 vous recommande ces morceaux de musique :",
 
-  "Envoyer vos avis": "Envoyer vos avis"
+  "Envoyer vos avis": "Envoyer vos avis",
+
+  "Bienvenue sur Muse, un projet de recommendations musicales.": "Bienvenue sur Muse, un projet de recommendations musicales.",
+  "Ce site web ne récolte aucune donnée utilisateur personnelle et n'utilise aucun cookie. Les avis sont envoyés annonymement sans inclure d'information permettant de tracer l'utilisateur.": "Ce site web ne récolte aucune donnée utilisateur personnelle et n'utilise aucun cookie. Les avis sont envoyés annonymement sans inclure d'information permettant de tracer l'utilisateur.",
+  "Il est peu probable que les musiques sélectionnables vous soient connues. Utilisez vos genres préférés pour sélectionner des musiques qui vous plaisent !": "Il est peu probable que les musiques sélectionnables vous soient connues. Utilisez vos genres préférés pour sélectionner des musiques qui vous plaisent !",
+  "Toutes les musiques sont disponibles sur le site: ": "Toutes les musiques sont disponibles sur le site: ",
+  "Pensez à bien utiliser toute l'échelle pour noter les recommendations.": "Pensez à bien utiliser toute l'échelle pour noter les recommendations.",
+  "La recommendation ne vous plais pas du tout.": "La recommendation ne vous plais pas du tout.",
+  "La recommendation pourrait être meilleure ou plus pertinente.": "La recommendation pourrait être meilleure ou plus pertinente.",
+  "La recommendation vous plais énormément.": "La recommendation vous plais énormément.",
+  "J'ai compris": "J'ai compris",
+  "Informations sur Muse": "Informations sur Muse"
 }
